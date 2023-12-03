@@ -15,18 +15,18 @@ import com.doctor.model.Chamber;
 import com.doctor.model.service.ChamberService;
 
 @RestController
-@RequestMapping("/api/chamber")
+@RequestMapping("/api")
 @CrossOrigin("*")
 public class ChamberController {
 
 	@Autowired
 	ChamberService chamberService;
 	
-	@PostMapping("/create/{username}")
+	@PostMapping("/chamber/create/{username}")
 	private ResponseEntity<?> createChamber(@RequestBody Chamber chamber, @PathVariable String username){
 		return new ResponseEntity<>(chamberService.createChamber(chamber,username),HttpStatus.OK);
 	}
-	@GetMapping("/getchamber/{username}")
+	@GetMapping("/chamber/getchamber/{username}")
 	private ResponseEntity<?> getChamber(@PathVariable String username){
 		return new ResponseEntity<>(chamberService.getChamber(username),HttpStatus.OK);
 	}

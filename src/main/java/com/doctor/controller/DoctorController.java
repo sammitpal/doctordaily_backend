@@ -15,18 +15,18 @@ import com.doctor.model.Doctor;
 import com.doctor.model.service.DoctorService;
 
 @RestController
-@RequestMapping("/api/doctor")
+@RequestMapping("/api")
 @CrossOrigin("*")
 public class DoctorController {
 
 	@Autowired
 	DoctorService doctorService;
 	
-	@PostMapping("/saveinfo")
+	@PostMapping("/doctor/saveinfo")
 	public ResponseEntity<?> createDoctor(@RequestBody Doctor doctor){
 		return new ResponseEntity<>(doctorService.savedDoctor(doctor), HttpStatus.OK);
 	}
-	@GetMapping("/getinfo/{username}")
+	@GetMapping("/doctor/getinfo/{username}")
 	public ResponseEntity<?> getDoctor(@PathVariable String username){
 		return new ResponseEntity<>(doctorService.getDoctorData(username), HttpStatus.OK);
 	}

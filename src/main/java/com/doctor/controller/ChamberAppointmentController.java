@@ -14,18 +14,18 @@ import com.doctor.model.ChamberAppointment;
 import com.doctor.model.service.ChamberAppointmentService;
 
 @RestController
-@RequestMapping("/api/chamberappointment")
+@RequestMapping("/api")
 public class ChamberAppointmentController {
 
 	@Autowired
 	ChamberAppointmentService chamberAppointmentService;
 	
-	@PostMapping("/create/{chamberid}")
+	@PostMapping("/chamberappointment/create/{chamberid}")
 	private ResponseEntity<?> createChamberAppoitnment(@RequestBody ChamberAppointment chamberAppointment, @PathVariable String chamberid){
 		return new ResponseEntity<>(chamberAppointmentService.createAppointment(chamberAppointment, chamberid), HttpStatus.OK);
 	}
 	
-	@GetMapping("/getallappointments/{chamberid}")
+	@GetMapping("/chamberappointment/getallappointments/{chamberid}")
 	private ResponseEntity<?> getAllChamberAppointments(@PathVariable String chamberid){
 		return new ResponseEntity<>(chamberAppointmentService.showAllAppointments(chamberid),HttpStatus.OK);
 	}
