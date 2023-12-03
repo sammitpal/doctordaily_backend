@@ -16,7 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	String []urls = { "/error" };
+	String []urls = { "/error","/v3/*","/swagger-ui/*","/swagger-resources/**" };
 
 
 	@Autowired
