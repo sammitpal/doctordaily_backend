@@ -23,11 +23,11 @@ public class ChamberController {
 	ChamberService chamberService;
 	
 	@PostMapping("/chamber/create/{username}")
-	private ResponseEntity<?> createChamber(@RequestBody Chamber chamber, @PathVariable String username){
+	public ResponseEntity<?> createChamber(@RequestBody Chamber chamber, @PathVariable String username){
 		return new ResponseEntity<>(chamberService.createChamber(chamber,username),HttpStatus.OK);
 	}
 	@GetMapping("/chamber/getchamber/{username}")
-	private ResponseEntity<?> getChamber(@PathVariable String username){
+	public ResponseEntity<?> getChamber(@PathVariable String username){
 		return new ResponseEntity<>(chamberService.getChamber(username),HttpStatus.OK);
 	}
 	
