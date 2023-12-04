@@ -1,5 +1,7 @@
 package com.doctor.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +23,12 @@ public class ChamberAppointmentController {
 	ChamberAppointmentService chamberAppointmentService;
 	
 	@PostMapping("/chamberappointment/create/{chamberid}")
-	private ResponseEntity<?> createChamberAppoitnment(@RequestBody ChamberAppointment chamberAppointment, @PathVariable String chamberid){
+	private ResponseEntity<ChamberAppointment> createChamberAppoitnment(@RequestBody ChamberAppointment chamberAppointment, @PathVariable String chamberid){
 		return new ResponseEntity<>(chamberAppointmentService.createAppointment(chamberAppointment, chamberid), HttpStatus.OK);
 	}
 	
 	@GetMapping("/chamberappointment/getallappointments/{chamberid}")
-	private ResponseEntity<?> getAllChamberAppointments(@PathVariable String chamberid){
+	private ResponseEntity<List<ChamberAppointment>> getAllChamberAppointments(@PathVariable String chamberid){
 		return new ResponseEntity<>(chamberAppointmentService.showAllAppointments(chamberid),HttpStatus.OK);
 	}
 	

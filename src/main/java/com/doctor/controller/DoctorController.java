@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.doctor.model.Doctor;
+import com.doctor.model.SuccessReponse;
 import com.doctor.model.service.DoctorService;
 
 @RestController
@@ -23,11 +24,11 @@ public class DoctorController {
 	DoctorService doctorService;
 	
 	@PostMapping("/doctor/saveinfo")
-	public ResponseEntity<?> createDoctor(@RequestBody Doctor doctor){
+	public ResponseEntity<SuccessReponse> createDoctor(@RequestBody Doctor doctor){
 		return new ResponseEntity<>(doctorService.savedDoctor(doctor), HttpStatus.OK);
 	}
 	@GetMapping("/doctor/getinfo/{username}")
-	public ResponseEntity<?> getDoctor(@PathVariable String username){
+	public ResponseEntity<Doctor> getDoctor(@PathVariable String username){
 		return new ResponseEntity<>(doctorService.getDoctorData(username), HttpStatus.OK);
 	}
 
