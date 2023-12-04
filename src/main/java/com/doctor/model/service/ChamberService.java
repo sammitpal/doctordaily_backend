@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.doctor.model.Chamber;
-import com.doctor.model.Doctor;
 @Service
 public interface ChamberService {
 

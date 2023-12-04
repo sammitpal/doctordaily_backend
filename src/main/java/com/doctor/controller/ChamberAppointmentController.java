@@ -23,12 +23,12 @@ public class ChamberAppointmentController {
 	ChamberAppointmentService chamberAppointmentService;
 	
 	@PostMapping("/chamberappointment/create/{chamberid}")
-	private ResponseEntity<ChamberAppointment> createChamberAppoitnment(@RequestBody ChamberAppointment chamberAppointment, @PathVariable String chamberid){
+	public ResponseEntity<ChamberAppointment> createChamberAppoitnment(@RequestBody ChamberAppointment chamberAppointment, @PathVariable String chamberid){
 		return new ResponseEntity<>(chamberAppointmentService.createAppointment(chamberAppointment, chamberid), HttpStatus.OK);
 	}
 	
 	@GetMapping("/chamberappointment/getallappointments/{chamberid}")
-	private ResponseEntity<List<ChamberAppointment>> getAllChamberAppointments(@PathVariable String chamberid){
+	public ResponseEntity<List<ChamberAppointment>> getAllChamberAppointments(@PathVariable String chamberid){
 		return new ResponseEntity<>(chamberAppointmentService.showAllAppointments(chamberid),HttpStatus.OK);
 	}
 	
