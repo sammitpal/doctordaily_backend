@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.doctor.model.Chamber;
-import com.doctor.model.service.ChamberService;
+import com.doctor.service.ChamberService;
 
 @RestController
 @RequestMapping("/api")

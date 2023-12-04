@@ -1,4 +1,4 @@
-package com.doctor.model.service.impl;
+package com.doctor.service.impl;
 
 import java.util.List;
 import java.util.UUID;
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import com.doctor.exception.DoctorNotFoundException;
 import com.doctor.model.Chamber;
 import com.doctor.model.Doctor;
-import com.doctor.model.service.ChamberService;
 import com.doctor.repository.ChamberRepository;
 import com.doctor.repository.DoctorRepository;
+import com.doctor.service.ChamberService;
 
 @Service
 public class ChamberServiceImpl implements ChamberService{

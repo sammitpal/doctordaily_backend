@@ -1,4 +1,4 @@
-package com.doctor.model.service;
+package com.doctor.service;
 
 import org.springframework.stereotype.Service;
 

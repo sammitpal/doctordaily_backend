@@ -1,4 +1,4 @@
-package com.doctor.model.service.impl;
+package com.doctor.service.impl;
 
 import java.util.UUID;
 
@@ -10,8 +10,8 @@ import com.doctor.exception.DoctorNotFoundException;
 import com.doctor.exception.GeneralException;
 import com.doctor.model.Doctor;
 import com.doctor.model.SuccessReponse;
-import com.doctor.model.service.DoctorService;
 import com.doctor.repository.DoctorRepository;
+import com.doctor.service.DoctorService;
 @Service
 public class DoctorServiceImpl implements DoctorService{
 

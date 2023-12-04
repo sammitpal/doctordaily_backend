@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.doctor.model.Doctor;
 import com.doctor.model.SuccessReponse;
-import com.doctor.model.service.DoctorService;
+import com.doctor.service.DoctorService;
 
 @RestController
 @RequestMapping("/api")

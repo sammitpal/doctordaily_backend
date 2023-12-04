@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.doctor.model.ChamberAppointment;
-import com.doctor.model.service.ChamberAppointmentService;
+import com.doctor.service.ChamberAppointmentService;
 
 @RestController
 @RequestMapping("/api")
