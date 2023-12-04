@@ -28,8 +28,7 @@ public class ChamberAppointmentServiceImpl implements ChamberAppointmentService{
 		if(foundChamber!=null) {
 			chamberappointment.setAppointmentId(UUID.randomUUID().toString());
 			chamberappointment.setChamber(foundChamber);
-			ChamberAppointment savedAppoitnment = chamberAppointmentRepository.save(chamberappointment);
-			return savedAppoitnment;
+			return chamberAppointmentRepository.save(chamberappointment);;
 		}
 		return null;
 	}
@@ -37,8 +36,7 @@ public class ChamberAppointmentServiceImpl implements ChamberAppointmentService{
 	@Override
 	public List<ChamberAppointment> showAllAppointments(String chamberid) {
 		Chamber foundChamber = chamberRepository.findById(chamberid).orElseThrow(()->new ChamberNotFoundException("Chamber not found"));
-		List<ChamberAppointment> allAppointments = chamberAppointmentRepository.findByChamber(foundChamber);
-		return allAppointments;
+		return chamberAppointmentRepository.findByChamber(foundChamber);;
 	}
 
 }
