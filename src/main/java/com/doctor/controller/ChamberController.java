@@ -1,5 +1,7 @@
 package com.doctor.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +25,11 @@ public class ChamberController {
 	ChamberService chamberService;
 	
 	@PostMapping("/chamber/create/{username}")
-	private ResponseEntity<?> createChamber(@RequestBody Chamber chamber, @PathVariable String username){
+	public ResponseEntity<Chamber> createChamber(@RequestBody Chamber chamber, @PathVariable String username){
 		return new ResponseEntity<>(chamberService.createChamber(chamber,username),HttpStatus.OK);
 	}
 	@GetMapping("/chamber/getchamber/{username}")
-	private ResponseEntity<?> getChamber(@PathVariable String username){
+	public ResponseEntity<List<Chamber>> getChamber(@PathVariable String username){
 		return new ResponseEntity<>(chamberService.getChamber(username),HttpStatus.OK);
 	}
 	
